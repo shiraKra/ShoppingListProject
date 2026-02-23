@@ -17,34 +17,34 @@ CREATE TABLE ShoppingItems (
     CONSTRAINT FK_ItemStatus FOREIGN KEY (StatusId) REFERENCES Statuses(StatusId),
     CONSTRAINT FK_ItemCategory FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId)
 );
-INSERT INTO Statuses (StatusName) VALUES (N'θψν πχπδ'), (N'αςβμδ'), (N'αεφς');
+INSERT INTO Statuses (StatusName) VALUES (N'Γ¨ΓΈΓ­ Γ°Γ·Γ°Γ¤'), (N'Γ΅Γ²ΓΆΓ¬Γ¤'), (N'Γ΅Γ¥Γ¶Γ²');
 
 
-INSERT INTO Categories (CategoryName) VALUES (N'ξεφψι ημα'), (N'τιψεϊ ειψχεϊ'), (N'πιχιεο');
+INSERT INTO Categories (CategoryName) VALUES (N'Γ®Γ¥Γ¶ΓΈΓ© Γ§Γ¬Γ΅'), (N'Γ΄Γ©ΓΈΓ¥ΓΊ Γ¥Γ©ΓΈΓ·Γ¥ΓΊ'), (N'Γ°Γ©Γ·Γ©Γ¥Γ―');
 
 USE ShoppingListDB;
 GO
 
 -----------------------------------------------------------
--- 1. τψεφγεψδ μιφιψϊ ξεφψ ηγω (Create)
+-- 1. Γ΄ΓΈΓ¥Γ¶Γ£Γ¥ΓΈΓ¤ Γ¬Γ©Γ¶Γ©ΓΈΓΊ Γ®Γ¥Γ¶ΓΈ Γ§Γ£ΓΉ (Create)
 -----------------------------------------------------------
 CREATE PROCEDURE sp_AddItem
     @ItemName NVARCHAR(100),
     @ItemDescription NVARCHAR(MAX),
     @CategoryId INT,
-    @StatusId INT = 1 -- αψιψϊ ξηγμ: θψν πχπδ
+    @StatusId INT = 1 -- Γ΅ΓΈΓ©ΓΈΓΊ Γ®Γ§Γ£Γ¬: Γ¨ΓΈΓ­ Γ°Γ·Γ°Γ¤
 AS
 BEGIN
     INSERT INTO ShoppingItems (ItemName, ItemDescription, CategoryId, StatusId, CreatedAt)
     VALUES (@ItemName, @ItemDescription, @CategoryId, @StatusId, GETDATE());
     
-    SELECT SCOPE_IDENTITY() AS NewItemId; -- ξηζιψ μ-API ΰϊ δξζδδ δηγω
+    SELECT SCOPE_IDENTITY() AS NewItemId; -- Γ®Γ§Γ¦Γ©ΓΈ Γ¬-API Γ ΓΊ Γ¤Γ®Γ¦Γ¤Γ¤ Γ¤Γ§Γ£ΓΉ
 END
 GO
 
 -----------------------------------------------------------
--- 2. τψεφγεψδ μωμιτϊ λμ δψωιξδ (Read All)
--- λεμμϊ JOIN λγι μδφιβ ωξεϊ εμΰ ψχ ξρτψι ID
+-- 2. Γ΄ΓΈΓ¥Γ¶Γ£Γ¥ΓΈΓ¤ Γ¬ΓΉΓ¬Γ©Γ΄ΓΊ Γ«Γ¬ Γ¤ΓΈΓΉΓ©Γ®Γ¤ (Read All)
+-- Γ«Γ¥Γ¬Γ¬ΓΊ JOIN Γ«Γ£Γ© Γ¬Γ¤Γ¶Γ©ΓΆ ΓΉΓ®Γ¥ΓΊ Γ¥Γ¬Γ  ΓΈΓ· Γ®Γ±Γ΄ΓΈΓ© ID
 -----------------------------------------------------------
 CREATE PROCEDURE sp_GetAllItems
 AS
@@ -64,7 +64,7 @@ END
 GO
 
 -----------------------------------------------------------
--- 3. τψεφγεψδ μωμιτϊ ξεφψ αεγγ μτι ID (Read One)
+-- 3. Γ΄ΓΈΓ¥Γ¶Γ£Γ¥ΓΈΓ¤ Γ¬ΓΉΓ¬Γ©Γ΄ΓΊ Γ®Γ¥Γ¶ΓΈ Γ΅Γ¥Γ£Γ£ Γ¬Γ΄Γ© ID (Read One)
 -----------------------------------------------------------
 CREATE PROCEDURE sp_GetItemById
     @Id INT
@@ -75,7 +75,7 @@ END
 GO
 
 -----------------------------------------------------------
--- 4. τψεφγεψδ μςγλεο ξεφψ χιιν (Update)
+-- 4. Γ΄ΓΈΓ¥Γ¶Γ£Γ¥ΓΈΓ¤ Γ¬Γ²Γ£Γ«Γ¥Γ― Γ®Γ¥Γ¶ΓΈ Γ·Γ©Γ©Γ­ (Update)
 -----------------------------------------------------------
 CREATE PROCEDURE sp_UpdateItem
     @Id INT,
@@ -95,7 +95,7 @@ END
 GO
 
 -----------------------------------------------------------
--- 5. τψεφγεψδ μηιτεω ξεφψ μτι ων (Search)
+-- 5. Γ΄ΓΈΓ¥Γ¶Γ£Γ¥ΓΈΓ¤ Γ¬Γ§Γ©Γ΄Γ¥ΓΉ Γ®Γ¥Γ¶ΓΈ Γ¬Γ΄Γ© ΓΉΓ­ (Search)
 -----------------------------------------------------------
 CREATE PROCEDURE sp_SearchItems
     @SearchTerm NVARCHAR(100)
