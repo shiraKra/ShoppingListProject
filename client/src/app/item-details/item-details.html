@@ -1,0 +1,33 @@
+<div class="details-wrapper">
+  <div class="details-header">
+    <h3 style="margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7;">פרטי פריט</h3>
+    <h1 style="margin: 10px 0 0 0;">{{ product?.name }}</h1>
+  </div>
+
+  <div class="details-body">
+    <div class="info-row">
+      <span class="label">מזהה מערכת</span>
+      <span class="value">#00{{ product?.id }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">קטגוריית מוצר</span>
+      <span class="value">{{ product?.category }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">מחיר מומלץ</span>
+      <span class="value">{{ product?.price }} ₪</span>
+    </div>
+
+    <div class="info-row" style="border: none;">
+      <span class="label">סטטוס</span>
+      <span class="value" style="color: #20bf6b;">זמין במלאי</span>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; gap: 10px;">
+      <button routerLink="/" style="width: 100%; padding: 15px; background: #f1f2f6; border: none; cursor: pointer;">חזרה</button>
+      <button [routerLink]="['/edit', product?.id]" style="width: 100%; padding: 15px; background: #2d3436; color: white; border: none; cursor: pointer;">עריכה</button>
+    </div>
+  </div>
+</div>

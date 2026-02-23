@@ -1,0 +1,46 @@
+<div class="form-card">
+  <h2 style="margin-top: 0; margin-bottom: 30px; text-align: center; color: #2d3436;">
+    {{ isEditMode ? 'עריכת מוצר' : 'מוצר חדש' }}
+  </h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label>איך קוראים למוצר?</label>
+      <input type="text" formControlName="name" placeholder="למשל: גבינה לבנה">
+      @if (productForm.get('name')?.invalid && productForm.get('name')?.touched) {
+        <small style="color: #eb4d4b;">חובה להזין שם תקין</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>קטגוריה</label>
+      <select formControlName="category">
+        <option value="">בחרי מהרשימה...</option>
+        @for (cat of categories; track cat) {
+          <option [value]="cat">{{ cat }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>מחיר (₪)</label>
+      <input type="number" formControlName="price">
+    </div>
+
+    <div style="display: flex; gap: 15px; margin-top: 40px;">
+      <button type="submit" 
+              [disabled]="productForm.invalid" 
+              style="flex: 2; background: #2d3436; color: white; padding: 15px; border: none; cursor: pointer;">
+        {{ isEditMode ? 'עדכן עכשיו' : 'הוסף לרשימה' }}
+      </button>
+      
+      <button type="button" 
+              routerLink="/" 
+              style="flex: 1; background: transparent; border: 1px solid #d1d8e0; padding: 15px; cursor: pointer;">
+        ביטול
+      </button>
+    </div>
+
+  </form>
+</div>

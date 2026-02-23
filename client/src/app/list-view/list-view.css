@@ -1,0 +1,47 @@
+.list-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* שדה חיפוש מעוצב */
+.search-input {
+  width: 100%;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* עיצוב הטבלה ככרטיסיות */
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px; /* רווח בין השורות */
+}
+
+.modern-table tr {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.modern-table td {
+  padding: 20px;
+  border: none;
+}
+
+.modern-table td:first-child { border-radius: 0 15px 15px 0; }
+.modern-table td:last-child { border-radius: 15px 0 0 15px; }
+
+/* כפתור הוספה צף */
+.add-btn {
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  margin-bottom: 20px;
+}

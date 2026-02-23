@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* ייבוא פונט נקי ומודרני */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Assistant', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin: 0;
+  min-height: 100vh;
+  direction: rtl;
+  color: #2d3436;
+}
+
+/* עיצוב כללי לכפתורים כדי שיראו יוקרתיים */
+button {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}

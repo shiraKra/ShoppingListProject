@@ -1,0 +1,29 @@
+.details-wrapper {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.details-header {
+  background: #2d3436;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.details-body {
+  padding: 40px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.label { color: #a5b1c2; text-transform: uppercase; font-size: 0.8rem; font-weight: 700; }
+.value { color: #2d3436; font-weight: 600; font-size: 1.1rem; }

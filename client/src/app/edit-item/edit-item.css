@@ -1,0 +1,35 @@
+.form-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px); /* אפקט טשטוש זכוכית */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 450px;
+  margin: 60px auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #4b6584;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #d1d8e0;
+  border-radius: 10px;
+  background: white;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #45aaf2;
+  box-shadow: 0 0 0 4px rgba(69, 170, 242, 0.1);
+}
